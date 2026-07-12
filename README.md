@@ -367,6 +367,7 @@ With all closed-loop manual parameters validated under a live flight load profil
 
 ### FLight Test Footage
 [![Watch the SUccessful Fligth Test](images/hover.jfif)](https://youtu.be/KpAUUV5CRJU?si=SYuJj-ta6YTAPrbt)
+
 *Figure: Live fligth test demonstration verifying active PID stabilization, successful ground-effect clearance, and responsive manual attitude control*
 
 ## 11. Future Insights & Roadmap
