@@ -1,6 +1,29 @@
 # AZRAEL.V1.0.  Flight Controller
 
+![DRONE](images/drone.jfif)
+
+*Figure: Drone using AZRAEL.V1.0*
+
+![AZRAEL.V1.0 PCB](images/pcb.jfif)
+
+*Figure: AZRAEL.V1.0*
+
 **AZRAEL.V1.0** is an embedded flight control system engineered from scratch for the **STM32F103C8T6 (Blue Pill)** microcontroller. The project focuses on efficient hardware utilization through modular firmware design, dedicated peripheral isolation, high-speed SPI sensor acquisition, direct timer register control for ESC actuation, and a custom calibration engine that ensures consistent and reliable pre-flight operation.
+
+## Design Philosopy
+**AZRAEL.V1.0** was designed with deterministic execution and hardware-level efficiency as primary objectives. Rather than relying on high-level Arduino abstractions, the firmware directly configures STM32 peripherals, isolates communication interfaces, and employs a modular architecture to achieve predictable timing suitable for real-time flight control. The project emphasizes understanding and implementing every subsystem from first principles instead of depending on existing flight controller frameworks.
+
+## Features
+- STM32F103 (Blue pill) Flight Controller
+- 400 Hz Control loop
+- SPI-based IMU Drvier
+- USART3 i-BUS Receiver
+- Madgwick AHRS
+- PID Stabilization
+- Flash Memory Parameter Storage
+- LED Status Interface
+- Hardware Timer ESC Output
+- Modular Firmware Architecture
 
 ---
 
@@ -62,6 +85,22 @@ The firmware utilizes a modular header design, splitting critical sub-systems in
    ├── 📄 06_calibration.h            # Interactive Calibration State Machine
    └── 📄 07_pid_flight_controller.h  # Madgwick AHRS Fusion & PID Control Loops
 ```
+
+### 2.1 System Benchmarks & Performance Metrics
+
+To maintain precise attitude tracking and guarantee deterministic control loop execution, the flight controller architecture is bound by the following high-speed processing and hardware telemetry constraints:
+
+| Metric Parameter | Operational Specification | Target Purpose & Technical Significance |
+| :--- | :--- | :--- |
+| **MCU Frequency** | 72 MHz | The native clock speed of the ARM Cortex-M3 core, providing the computational bandwidth needed for floating-point calculations. |
+| **Loop Frequency** | 400 Hz | The main scheduling execution speed; the core PID loop runs precisely every 2500 µs to prevent propagation delay. |
+| **Sensor Update Rate** | 400 Hz | Synchronized raw data acquisition rate from the IMU registers, ensuring the control loops never read stale information. |
+| **SPI Clock Speed** | 18 MHz | High-speed SPI1 bus frequency utilized to pull 14-byte raw data bursts from the GY-91 instantly without blocking threads. |
+| **ESC Update Rate** | 400 Hz | Hardware Timer 2 (TIM2) register refresh frequency, ensuring motor responses match the core PID loop speed perfectly. |
+| **Receiver Latency** | ~7 ms | The uniform update delay parsed from the digital i-BUS stream, offering significantly faster response bounds than analog PWM loops. |
+| **Calibration Time** | 2 seconds | The interactive time window allocated for active gyroscope offset sampling and level baseline initialization upon boot. |
+
+---
 
 ## 3. Hardware Evolution:From Prototype to Custom PCB
 
@@ -126,6 +165,24 @@ The STM32F103C8T6 (Blue Pill) acts as the central processing unit while all peri
 - ESCs → TIM2 PWM outputs
 - LEDs → PB12 and PB13
 - FTDI → USART1 for debugging and flashing
+
+### Top view of PCB
+
+![Front of PCB](images\Final_pcb)
+
+*Figure: Top view of PCB*
+
+### Bottom view of PCB
+
+![Back of PCB](images\back_pcb)
+
+*Figure: Bottom view of PCB*
+
+### Mounted Frame
+
+![Mounted frame of drone](images\drone)
+
+*Figure: Mounted view of PCB in drone*
 
 ## 6. IMU Characterization & Valiation
 
