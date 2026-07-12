@@ -105,24 +105,10 @@ If the high-speed i-BUS receiver data stream had been dropped onto the same hard
 | Component Name| Physical Sub-Module | STM32 Pin Target | Interface Type | Technical Selection Logic & Purpose|
 | :--- | :--- | :--- | :--- | :--- |
 |STM32F103C8T6(BLUE PILL) | Core Microcontroller | `System Core` | Core Processor | Runs an ARM Cortex-M3 32-bit architecture at 72MHz. Handles floating-point Madgwick sensor fusion equations within a tight 2500µs flight window.|
-| GY-91 | 10-DOF Inertial Unit | `PA5` (SCK),
-
-`PA6` (MISO),
-
-`PA7` (MOSI),
-
-`PB0` (NCS)| SPI1 BUS | Houses the MPU-9250 IMU. Replaced the high-noise breadboard I2C topology with a rigid, direct SPI routing to capture raw 6-axis G-force and rotational rates flawlessly. |
+| GY-91 | 10-DOF Inertial Unit | `PA5` (SCK),`PA6` (MISO),`PA7` (MOSI),`PB0` (NCS)| SPI1 BUS | Houses the MPU-9250 IMU. Replaced the high-noise breadboard I2C topology with a rigid, direct SPI routing to capture raw 6-axis G-force and rotational rates flawlessly. |
 | FlySky-iA6B | Serial RC Receiver | `PB11`(RX3) | USART3 Serial | Multiplexes all pilot stick movements down a signle data lane using high-speed i-BUS protocol at 115200 baud, completely isolated from diagnostic serial loops.|
-|Electronic Speed Controllers(ESCs) |Qaud Motor Drivers |`PA0` (TIM2_CH1),
-
-`PA1` (TIM2_CH2),
-
-`PA2` (TIM2_CH3) ,
-
-`PA3` (TIM2_CH4) | Hardware PWM | Translates internal core commands into dynamic hardware motor drive currents. Driven directly via internal hardware Timer 2 reisters at 400Hz for razor-sharp motor response times.|
-| Status Indicators | Red/Green Dual LEDs | `PB12` (RED)
-
-`PB13` (GREEN) | GPIO Output | Provides real-time visual diagnostic status indicators directly to the pilot (e.g active calibration states, arming configurations, and erros flashes).|
+|Electronic Speed Controllers(ESCs) |Qaud Motor Drivers |`PA0` (TIM2_CH1),`PA1` (TIM2_CH2),`PA2` (TIM2_CH3) ,`PA3` (TIM2_CH4) | Hardware PWM | Translates internal core commands into dynamic hardware motor drive currents. Driven directly via internal hardware Timer 2 reisters at 400Hz for razor-sharp motor response times.|
+| Status Indicators | Red/Green Dual LEDs | `PB12` (RED),`PB13` (GREEN) | GPIO Output | Provides real-time visual diagnostic status indicators directly to the pilot (e.g active calibration states, arming configurations, and erros flashes).|
 
 ## 5. Complete Schematic Diagram
 
