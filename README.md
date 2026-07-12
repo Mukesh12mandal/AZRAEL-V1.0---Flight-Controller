@@ -227,7 +227,7 @@ The indicator system is composed of two LEDs:
 |Fatal Error |Fast Blink |OFF |Critical system error detected|
 
 ## 8. PID Tuning & Dynamic Stabilization Guide
-This section documents the explicit command interfaces, step-by-step sequential tuning methodology, and diagnostic error matrices used to stabilize the AZRAEL.V1.O flight dynamics controller.
+This section documents the explicit command interfaces, step-by-step sequential tuning methodology, and diagnostic error matrices used to stabilize the AZRAEL.V1.0 flight dynamics controller.
 
 ### 8.1 Serial Tuning Command Interface Reference
 To adjust control loops on the fly without re-flashing the core silicon, use the interactive terminal tool running over `USART1` (115200 baud).
