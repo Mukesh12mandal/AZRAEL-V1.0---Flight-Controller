@@ -342,11 +342,11 @@ In total, 3 motors and 3 ESCs had to be replaced over the course of the project.
 During preliminary low-altitude hover assessments, the quadcopter exhibited a persistent lateral drift, indicating the need for minor adjustments to the Integral ($K_I$) tracking coefficients to null out steady-state errors.
 To evaluate structural authority, throttle was incrementally increased until the landing gear cleared the ground. Upon lifting off, the quadcoptor experienced a sudden, severe rotational instability along its horizontal axes, leading to an uncommanded aggressive roll-over state. A rapid emergency software disarm command was manually executed mid-rotation, successfully mitigating catastrophic impact force, neutralizing motor output, and minimizing component casualties.
 
-![Drone Drift](images/bench_test.gif)
-*Figure: Captured drone drifting while testing indoor.
+<video src="images/bench_test.mp4" width="100%" controls autoplay loop muted></video>
+*Figure: Captured drone drifting while testing indoor.*
 
-![Attitude Instability test](images/untuned_flight.gif)
-
+<video src="images/untuned_flight.mp4" width="100%" controls autoplay loop muted></video>
+*Figure: Captured drone drifting while testing outdoor.*
 ## 10. Post-Tuning Manual Flight Test Profile
 
 Following the successful calibration of the feedback loops and sensor offset matrices, the final phase involved executing a manual Line-of-Sigth (LOS) maiden flight test to validate real-time stabilization performance under active pilot stick inputs.
