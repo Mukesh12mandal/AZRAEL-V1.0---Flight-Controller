@@ -3,17 +3,6 @@
 //  Accelerometer + Gyroscope only (BMP280 & Mag ignored)
 //  SPI1 : SCK=PA5  MISO=PA6  MOSI=PA7  CS=PB0
 //
-//  FIXES FROM v1:
-//  FIX-1 : Gyro offset sign bug — offset must be subtracted from
-//           raw value BEFORE applying axis inversion, not after.
-//           Old (wrong):  gy = -gy_raw + gyro_offset[1]
-//           New (correct): gy = -(gy_raw - (int16_t)gyro_offset[1])
-//           Mathematically:  -raw + offset  ≠  -(raw - offset)
-//           when offset ≠ 0.  The corrected form ensures the offset
-//           measured on the raw axis is consistently removed.
-//  FIX-2 : Global variables declared here are externed in main.ino
-//           — no re-declaration needed in other blocks that include
-//           this header (all other blocks must include this file).
 // ============================================================
 
 #pragma once
