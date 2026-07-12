@@ -162,6 +162,9 @@ The STM32F103C8T6 (Blue Pill) acts as the central processing unit while all peri
 - LEDs → PB12 and PB13
 - FTDI → USART1 for debugging and flashing
 
+### 5.1 Physical PCB Assembly & Integration
+
+Below is the realized hardware implementation built directly from the electrical schematics outlined above:
 ### Top view of PCB
 
 ![Front of PCB](images/Final_pcb.jfif)
