@@ -8,12 +8,6 @@
 //    TIM2_CH2  PA1  Motor2 CCW Front-Left
 //    TIM2_CH3  PA2  Motor3 CW  Rear-Left
 //    TIM2_CH4  PA3  Motor4 CCW Rear-Right
-//
-//  CHANGES FROM v1:
-//  - No logic changes. Block was correct.
-//  - Added explicit include guard comment explaining why
-//    DEBUG_SERIAL.println in initESC() requires Serial1 to be
-//    started before initESC() is called in setup().
 // ============================================================
 
 #pragma once
