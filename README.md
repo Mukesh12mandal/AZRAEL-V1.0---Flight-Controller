@@ -1,6 +1,6 @@
 # AZRAEL.V1.0.  Flight Controller
 
-![AZRAEL.V1.0 PCB](images/pcb.jfif)
+<img src="images/pcb.jfif" width="60%" alt="Image of AZRAEL />
 
 *Figure: AZRAEL.V1.0*
 
@@ -38,7 +38,7 @@ The hardware needed for the AZRAEL.V1.0 is listed below. I made this hardware li
 
 ### 1.1 The Gy-91 (IMU)
 
-![Image of Gy-91](images/gy-91.jpg)
+<img src="images/gy-91.jpg" width="45%" alt="Image of IMU GY-91" />
 
 *Figure: GY-91*
 
