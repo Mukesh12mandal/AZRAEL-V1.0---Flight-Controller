@@ -271,7 +271,7 @@ Zero out all derivative and integral terms across the system to prevent tracking
    - Target: A firtm pushback that cleanly centers the frame without bouncing.
 
 **Phase 3:Tune Pitch Proportional Authority (`k_p`)**
--  \Becausee quadcopter frames generally share identical mass distribution and geometric properties along their primary horizontal profiles, the Pitch axis parameters typically mirror Roll closely.
+- Becausee quadcopter frames generally share identical mass distribution and geometric properties along their primary horizontal profiles, the Pitch axis parameters typically mirror Roll closely.
 - Target: Initialize `pp1.2` and repeat the step-by-step scaling adjustments from Phase 2 until Pitch matches Roll stability.
 
 **Phase 4:Tune Kd Derivative Damping**
