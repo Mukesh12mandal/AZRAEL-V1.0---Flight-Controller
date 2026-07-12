@@ -213,7 +213,7 @@ The indicator system is composed of two LEDs:
 
 ### LED State Definitions
 
-|Operating State|REd LED|Green LED|Description|
+|Operating State|Red LED|Green LED|Description|
 | :--- | :--- | :--- | :--- |
 |Boot Sequence |OFF |OFF |System startup in progress|
 |Boot Sequence Complete |ON |OFF |Initilization completed; awaiting next state|
