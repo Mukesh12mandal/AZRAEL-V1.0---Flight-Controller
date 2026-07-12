@@ -7,7 +7,6 @@
 #pragma once
 #include "01_pins_and_includes.h"
 
-// ── FIX-1: Call initLEDs() FIRST in setup() ─────────────────
 void initLEDs() {
   pinMode(LED_RED,   OUTPUT);
   pinMode(LED_GREEN, OUTPUT);
