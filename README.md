@@ -1,6 +1,6 @@
 # AZRAEL.V1.0.  Flight Controller
 
-<img src="images/pcb.jfif" width="60%" alt="Image of AZRAEL />
+<img src="images/pcb.jfif" width="60%" alt="Image of AZRAEL" />
 
 *Figure: AZRAEL.V1.0*
 
