@@ -82,7 +82,6 @@ uint16_t ibusGetRaw(uint8_t ch) {
   return (uint16_t)ibus_ch[ch];
 }
 
-// ── FIX-2: initIBUS() must be called from main setup() ──────
 void initIBUS() {
   IBUS_SERIAL.begin(115200);
   DEBUG_SERIAL.println("✓ i-BUS USART3 PB11 @ 115200");
