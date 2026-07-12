@@ -20,9 +20,10 @@ The hardware needed for the AZRAEL.V1.0 is listed below. I made this hardware li
 ### 1.1 The Gy-91 (IMU)
 
 ![Image of Gy-91](images/gy-91.jpg)
+
 *Figure: GY-91*
 
-The only IMU that is supported by the AZRAEL.V1.0 software is the Gy-91 (10 dof). This is because the AZRAEL.V1.O is expandible without changing the pcb, we will have magnetometer and bmp280 within the same IMU. But in this version of AZRAEL.V1.O we will be using only 6 dof to keep it as simple as possible.
+The only IMU that is supported by the AZRAEL.V1.0 software is the Gy-91 (10 dof). This is because the AZRAEL.V1.0 is expandible without changing the PCB, we will have magnetometer and bmp280 within the same IMU. But in this version of AZRAEL.V1.0 we will be using only 6 dof to keep it as simple as possible.
 
 ### 1.2 The transmitter and receiver
 
