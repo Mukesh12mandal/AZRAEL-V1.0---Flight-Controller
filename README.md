@@ -94,7 +94,7 @@ When migrating to the permanent PCB, a critical design choice was made to isolat
 
 ### 4.1 Resolving USART Peripheral Linker Conflicts
 
-The flight controller relies heavily on a real-time **Serail Debugger** running at 115200 baud to output telemetry to the PC. The debugger occupies **USART1**(`PA9` and `PA10`).
+The flight controller relies heavily on a real-time **Serial Debugger** running at 115200 baud to output telemetry to the PC. The debugger occupies **USART1**(`PA9` and `PA10`).
 
 If the high-speed i-BUS receiver data stream had been dropped onto the same hardware serial lanes, a terminal communication conflict would occur-completely breaking the debugger or corrupting incoming control frames.
 
