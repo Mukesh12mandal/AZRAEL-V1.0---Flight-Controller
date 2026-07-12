@@ -43,7 +43,7 @@ The AZRAEL V1.0 needs standardized receiver pulses as described in the table bel
 | `ibus_ch[2]` | Throttle | PB11 | Idle | Mid-Throttle | Full |
 | `ibus_ch[3]` | Yaw | PB11 | Yaw Left | Center | Yaw Right|
 
-The reciver signal wire is connected to PB11 of the stm32 which is 5V DC signal tolerant and is on USART3 because to avoid the conflict between the receiver and serial debugger which is in USART1 we used a different USART for the peaceful execution of the receiver.
+The receiver signal wire is connected to PB11 of the stm32 which is 5V DC signal tolerant and is on USART3 because to avoid the conflict between the receiver and serial debugger which is in USART1 we used a different USART for the peaceful execution of the receiver.
 
 The receiver is powered by the +5V output of the BEC. The connection can be found on the schematic.
 
