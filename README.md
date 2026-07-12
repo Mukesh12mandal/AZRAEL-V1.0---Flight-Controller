@@ -165,23 +165,21 @@ The STM32F103C8T6 (Blue Pill) acts as the central processing unit while all peri
 ### 5.1 Physical PCB Assembly & Integration
 
 Below is the realized hardware implementation built directly from the electrical schematics outlined above:
-### Top view of PCB
 
-![Front of PCB](images/Final_pcb.jfif)
+<p>
+  <img src="images/Final_pcb.jfif" width="45%" alt="Front of PCB" />
+  <img src="images/back_pcb.jpg" width="45%" alt="Back of PCB" />
+</p>
+<p><em>Figures: Top view (left) and Bottom view (right) of the custom flight controller PCB.</em></p>
 
-*Figure: Top view of PCB*
-
-### Bottom view of PCB
-
-![Back of PCB](images/back_pcb.jpg)
-
-*Figure: Bottom view of PCB*
+<br>
 
 ### Mounted Frame
 
-![Mounted frame of drone](images/drone.jfif)
+<img src="images/drone.jfif" width="60%" alt="Mounted frame of drone" />
 
-*Figure: Mounted view of PCB in drone*
+*Figure: Mounted view of PCB inside the quadcopter frame.*
+
 
 ## 6. IMU Characterization & Valiation
 
