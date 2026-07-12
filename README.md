@@ -46,8 +46,9 @@ The only IMU that is supported by the AZRAEL.V1.0 software is the Gy-91 (10 dof)
 
 ### 1.2 The transmitter and receiver
 
-![Image of receiver fs-ia6b](images/fs_ia6b.jpg)
-*Figure: Fs-iA6B*
+<img src="images/fs_ia6b.jpg" width="45%" alt="Image of receiver fs-ia6b" />
+
+*Figure: FS-iA6B*
 
 Not every transmitter can be used for the AZRAEL.V1.0. This is because we will be needing receiver capable of giving i-bus signal outfit and flysky fs-i6 transmitter with fs-iA6B receiver is the best choice and the firmware is written accordingly.
 
