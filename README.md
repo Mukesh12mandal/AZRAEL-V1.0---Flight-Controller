@@ -76,10 +76,10 @@ The initial proof-of-concept was constructed on a standard solderless breadboard
 
 - **Initial Protocol Choices**: The IMU was connected via the standard I2C communication bus, and a conventional receiver configuration was utilized where individual channels sent separate PWM pulse-width signals to discrete analog inputs on the microcontroller.
 
-- **Prototyping BOttolenecks Encountered**:
+- **Prototyping Bottolenecks Encountered**:
    1. **High I2C Frame Error Rates**:Due to the long, unshielded jumper wires and parasitic rows on the breadboard, the I2C bus experienced extreme susceptibility to electromagnetic noise. This triggered frequent  bus timeouts and corrupted data registers, which is catastrophic for a stable flight loop.
 
-   2. **Loop Timing Degradation**: Processing multiple distinct PWM channel inputs required reading multiple pins sequentially. This approach proved incredibly messy, hogged system overhead, and heavily slowed down the execution frequenct of the core tracking scheduler.
+   2. **Loop Timing Degradation**: Processing multiple distinct PWM channel inputs required reading multiple pins sequentially. This approach proved incredibly messy, hogged system overhead, and heavily slowed down the execution frequency of the core tracking scheduler.
 
 ### 3.2 Phase 2:The Production PCB(The SPI & i-BUS Breakthrough)
 To eliminate bus noise and guarantee a deterministic 400Hz loop execution rate, the hardware architecture was completely re-engineered onto a custom production PCB.
