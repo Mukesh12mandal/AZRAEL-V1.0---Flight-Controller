@@ -164,7 +164,7 @@ The STM32F103C8T6 (Blue Pill) acts as the central processing unit while all peri
 
 ### Top view of PCB
 
-![Front of PCB](images\Final_pcb,jfif)
+![Front of PCB](images\Final_pcb.jfif)
 
 *Figure: Top view of PCB*
 
