@@ -20,12 +20,14 @@ The hardware needed for the AZRAEL.V1.0 is listed below. I made this hardware li
 ### 1.1 The Gy-91 (IMU)
 
 ![Image of Gy-91](images/gy-91.jpg)
+*Figure: GY-91*
 
 The only IMU that is supported by the AZRAEL.V1.0 software is the Gy-91 (10 dof). This is because the AZRAEL.V1.O is expandible without changing the pcb, we will have magnetometer and bmp280 within the same IMU. But in this version of AZRAEL.V1.O we will be using only 6 dof to keep it as simple as possible.
 
 ### 1.2 The transmitter and receiver
 
 ![Image of receiver fs-ia6b](images/fs_ia6b.jpg)
+*Figure: Fs-iA6B*
 
 Not every transmitter can be used for the AZRAEL.V1.0. This is because we will be needing receiver capable of giving i-bus signal outfit and flysky fs-i6 transmitter with fs-iA6B receiver is the best choice and the firmware is written accordingly.
 
@@ -67,6 +69,7 @@ The development of AZRAEL.V1.O progressed through two distinct phases, shifting 
 ### 3.1 Phase 1:The Breadboard Prototype (The I2C&PWM Baseline)
 
 ![Breadboard Prototype for the testing of the logic](images/Prototype_1.jfif)
+*Figure: Breadboard Prototype*
 
 The initial proof-of-concept was constructed on a standard solderless breadboard to establish readings from the GY-91 IMU and process incoming transmitter control signals. 
 
@@ -123,6 +126,7 @@ If the high-speed i-BUS receiver data stream had been dropped onto the same hard
 ## 5. Complete Schematic Diagram
 
 ![AZRAEL V1.0 Schematic](images/schematic.png)
+*Figure: Schematic*
 
 The schematic below represents the complete electrical architecture of AZRAEL.V1.0
 
@@ -145,6 +149,7 @@ The tests were conducted directly on the completed PCB assembly.
 ### 6.1 Raw IMU Validation (Flat Position)
 
 ![Raw IMU Flat](images/raw_data_flat.png)
+*Figure: Raw IMU Validation (Flat)*
 
 The PCB was placed on a stationary flat surface.
 
@@ -158,6 +163,7 @@ This test verified proper SPI communication and stable sensor acquisition.
 ### 6.2 Raw IMU Validation (Tilted Position)
 
 ![Raw IMU Tilted](images/raw_imu_tilted.png)
+*Figure: Raw IMU Validation*
 
 The PCB was manually tilted.
 
@@ -171,6 +177,7 @@ This validated orientation responsiveness before enabling closed-loop stablizati
 ### 6.3 Filter Validation (Flat Position)
 
 ![Filtered Flat](images/filtered_flat.png)
+*Figure: Filter Validation*
 
 Filtered Euler angles were observed while the PCB remained stationary.
 
@@ -182,6 +189,7 @@ Filtered Euler angles were observed while the PCB remained stationary.
 ### 6.4 Filter Validation (Tilted Position)
 
 ![Filtered Tilted](images/filtered_tilted.png)
+*Figure: Filter Validation(Tilted)*
 
 The PCB was manually tilted and returned to different orientations.
 
@@ -193,6 +201,7 @@ The PCB was manually tilted and returned to different orientations.
 ### 6.5 Artificial Vibration Test
 
 ![Vibration Test](images/filtered_vibrated.png)
+*Figure: Artificial Vibration Test*
 
 Artificial disturbance were introduced by repeatedly tapping the table beneath the PCB.
 
@@ -342,11 +351,12 @@ In total, 3 motors and 3 ESCs had to be replaced over the course of the project.
 During preliminary low-altitude hover assessments, the quadcopter exhibited a persistent lateral drift, indicating the need for minor adjustments to the Integral ($K_I$) tracking coefficients to null out steady-state errors.
 To evaluate structural authority, throttle was incrementally increased until the landing gear cleared the ground. Upon lifting off, the quadcoptor experienced a sudden, severe rotational instability along its horizontal axes, leading to an uncommanded aggressive roll-over state. A rapid emergency software disarm command was manually executed mid-rotation, successfully mitigating catastrophic impact force, neutralizing motor output, and minimizing component casualties.
 
-<video src="images/bench_test.mp4" width="100%" controls autoplay loop muted></video>
+https://github.com/user-attachments/assets/77e9f002-c408-4ecc-8666-fbe57f0806b9
 *Figure: Captured drone drifting while testing indoor.*
 
-<video src="images/untuned_flight.mp4" width="100%" controls autoplay loop muted></video>
+https://github.com/user-attachments/assets/b165dcd2-82bb-4b75-9722-de7085d2752c
 *Figure: Captured drone drifting while testing outdoor.*
+
 ## 10. Post-Tuning Manual Flight Test Profile
 
 Following the successful calibration of the feedback loops and sensor offset matrices, the final phase involved executing a manual Line-of-Sigth (LOS) maiden flight test to validate real-time stabilization performance under active pilot stick inputs.
