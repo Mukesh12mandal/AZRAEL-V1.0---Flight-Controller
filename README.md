@@ -86,7 +86,7 @@ To eliminate bus noise and guarantee a deterministic 400Hz loop execution rate, 
 
 - *(The Move to SPI): The I2C interface was completely abandoned in favor of High-Speed SPI1. By soldering the GY-91 directly to dedicated, short PCB traces and driving it via an explicit Chip-Select (PB0)pin, signal integrity was stabilized, allowing 14-byte raw data bursts to be pulled cleanly at an 18 MHz clock rate.
 
-- *(The Move to i-BUS Serial): Individual channel PWM signal wires were replaced with the unified digital i-BUS serial protocol. Instead of splitting attention across separate pins, all 10 control channels are multiplexed down a single digital wire, allowing the flight engine to effortlesslt parse input updates via software memory buffers.
+- *(The Move to i-BUS Serial): Individual channel PWM signal wires were replaced with the unified digital i-BUS serial protocol. Instead of splitting attention across separate pins, all 10 control channels are multiplexed down a single digital wire, allowing the flight engine to effortlessly parse input updates via software memory buffers.
 
 ## 4. Peripheral Isolation & Hardware Mapping
 
