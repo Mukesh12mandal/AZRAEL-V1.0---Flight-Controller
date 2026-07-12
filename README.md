@@ -339,9 +339,11 @@ During preliminary low-altitude hover assessments, the quadcopter exhibited a pe
 To evaluate structural authority, throttle was incrementally increased until the landing gear cleared the ground. Upon lifting off, the quadcoptor experienced a sudden, severe rotational instability along its horizontal axes, leading to an uncommanded aggressive roll-over state. A rapid emergency software disarm command was manually executed mid-rotation, successfully mitigating catastrophic impact force, neutralizing motor output, and minimizing component casualties.
 
 https://github.com/user-attachments/assets/77e9f002-c408-4ecc-8666-fbe57f0806b9
+
 *Figure: Captured drone drifting while testing indoor.*
 
 https://github.com/user-attachments/assets/b165dcd2-82bb-4b75-9722-de7085d2752c
+
 *Figure: Captured drone drifting while testing outdoor.*
 
 ## 10. Post-Tuning Manual Flight Test Profile
