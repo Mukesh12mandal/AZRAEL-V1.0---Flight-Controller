@@ -307,8 +307,8 @@ Use this matrix during fligth analysis to identify control parameter bugs based 
 
 ### 8.4 Final Verification Steps
 
-- 1. Always open the monitor menu via `p` before and after modifying variables to confirm changes took effect.
-- 2. Once the tuning looks good, send `v` command to write the setup permanently into flash memory!
+1. Always open the monitor menu via `p` before and after modifying variables to confirm changes took effect.
+2. Once the tuning looks good, send `v` command to write the setup permanently into flash memory!
 
 ## 9. Engineering Challenges, Failure Analysis & Resolutions
 
@@ -355,9 +355,9 @@ Following the successful calibration of the feedback loops and sensor offset mat
 
 ### Flight Execution & Stabilization Observations
 
-- 1. **Takeoff & Ground Effect Clearance:** The system was armed via the transmitter safety switch. Throttle was smoothly and confidently advanced past the mid-point threshold to instantly launch the quadcopter above the highly turbulent "ground effect" pocket (the unstable air zone close to the floor).
+1. **Takeoff & Ground Effect Clearance:** The system was armed via the transmitter safety switch. Throttle was smoothly and confidently advanced past the mid-point threshold to instantly launch the quadcopter above the highly turbulent "ground effect" pocket (the unstable air zone close to the floor).
 
-- 2. **Attitude Stabilization Performance:** Once in free flight, the Madgwick sensor fusion engine and the newly tuned PID loops worked flawlessly. The aggressive uncommanded roll-over behavior from the previous test was completely eliminated. The minor `Ki` updates injected during Phase 6 successfully nullified the persistent lateral drift, allowing the drone to hold a remarkably steady manual hover.
+2. **Attitude Stabilization Performance:** Once in free flight, the Madgwick sensor fusion engine and the newly tuned PID loops worked flawlessly. The aggressive uncommanded roll-over behavior from the previous test was completely eliminated. The minor `Ki` updates injected during Phase 6 successfully nullified the persistent lateral drift, allowing the drone to hold a remarkably steady manual hover.
 
 - 3. **Control Stick Responsiveness:** Dynamic manual inputs were introduced along the Roll, Pitch, and Yaw axes to evaluate handling. The quadcopter responded linearly and predictably to the transmitter sticks. The derivative `Kd` term provided sharp damping, absorbing inertial oscillations immediately when the sticks were returned to center.
 
