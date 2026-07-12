@@ -3,13 +3,7 @@
 //  Board    : STM32F103C8T6 Blue Pill
 //  Toolchain: Arduino + STM32duino
 //
-//  CHANGES FROM v1:
-//  - Added FLIGHT_LOOP_US and CAL_LOOP_MS used by main.ino
-//  - Added MAX_ANGLE_DEG and MAX_YAW_RATE (moved from block 7
-//    so they are visible to any block that needs them)
-//  - Added GYRO_SCALE_DEG and ACCEL_SCALE_INV here so block 7
-//    does not need to re-define them
-// ============================================================
+
 
 #pragma once
 #include <SPI.h>
