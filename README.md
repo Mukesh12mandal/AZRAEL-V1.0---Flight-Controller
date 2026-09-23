@@ -6,7 +6,7 @@
 
 **AZRAEL.V1.0** is an embedded flight control system engineered from scratch for the **STM32F103C8T6 (Blue Pill)** microcontroller. The project focuses on efficient hardware utilization through modular firmware design, dedicated peripheral isolation, high-speed SPI sensor acquisition, direct timer register control for ESC actuation, and a custom calibration engine that ensures consistent and reliable pre-flight operation.
 
-## Design Philosopy
+## Design Philosophy
 **AZRAEL.V1.0** was designed with deterministic execution and hardware-level efficiency as primary objectives. Rather than relying on high-level Arduino abstractions, the firmware directly configures STM32 peripherals, isolates communication interfaces, and employs a modular architecture to achieve predictable timing suitable for real-time flight control. The project emphasizes understanding and implementing every subsystem from first principles instead of depending on existing flight controller frameworks.
 
 ## Features
@@ -42,7 +42,7 @@ The hardware needed for the AZRAEL.V1.0 is listed below. I made this hardware li
 
 *Figure: GY-91*
 
-The only IMU that is supported by the AZRAEL.V1.0 software is the Gy-91 (10 dof). This is because the AZRAEL.V1.0 is expandible without changing the PCB, we will have magnetometer and bmp280 within the same IMU. But in this version of AZRAEL.V1.0 we will be using only 6 dof to keep it as simple as possible.
+The only IMU that is supported by the AZRAEL.V1.0 software is the Gy-91 (10 dof). This is because the AZRAEL.V1.0 is expandable without changing the PCB, we will have magnetometer and bmp280 within the same IMU. But in this version of AZRAEL.V1.0 we will be using only 6 dof to keep it as simple as possible.
 
 ### 1.2 The transmitter and receiver
 
@@ -63,7 +63,7 @@ The AZRAEL V1.0 needs standardized receiver pulses as described in the table bel
 | `ibus_ch[2]` | Throttle | PB11 | Idle | Mid-Throttle | Full |
 | `ibus_ch[3]` | Yaw | PB11 | Yaw Left | Center | Yaw Right|
 
-The receiver signal wire is connected to PB11 of the stm32 which is 5V DC signal tolerant and is on USART3 because to avoid the conflict between the receiver and serial debugger which is in USART1 we used a different USART for the peaceful execution of the receiver.
+The receiver signal wire is connected to PB11 of the stm32 which is 5V DC signal tolerant and is on USART3 because to avoid the conflict between the receiver and serial debugger which is in USART1 we used a different USART for the isolated execution without interference of the receiver.
 
 The receiver is powered by the +5V output of the BEC. The connection can be found on the schematic.
 
@@ -89,7 +89,7 @@ To maintain precise attitude tracking and guarantee deterministic control loop e
 
 | Metric Parameter | Operational Specification | Target Purpose & Technical Significance |
 | :--- | :--- | :--- |
-| **MCU Frequency** | 72 MHz | The native clock speed of the ARM Cortex-M3 core, providing the computational bandwidth needed for floating-point calculations. |
+| **MCU Clock Frequency** | 72 MHz | The native clock speed of the ARM Cortex-M3 core, providing the computational bandwidth needed for floating-point calculations. |
 | **Loop Frequency** | 400 Hz | The main scheduling execution speed; the core PID loop runs precisely every 2500 µs to prevent propagation delay. |
 | **Sensor Update Rate** | 400 Hz | Synchronized raw data acquisition rate from the IMU registers, ensuring the control loops never read stale information. |
 | **SPI Clock Speed** | 18 MHz | High-speed SPI1 bus frequency utilized to pull 14-byte raw data bursts from the GY-91 instantly without blocking threads. |
@@ -112,7 +112,7 @@ The initial proof-of-concept was constructed on a standard solderless breadboard
 
 - **Initial Protocol Choices**: The IMU was connected via the standard I2C communication bus, and a conventional receiver configuration was utilized where individual channels sent separate PWM pulse-width signals to discrete analog inputs on the microcontroller.
 
-- **Prototyping Bottolenecks Encountered**:
+- **Prototyping Bottlenecks Encountered**:
    1. **High I2C Frame Error Rates**:Due to the long, unshielded jumper wires and parasitic rows on the breadboard, the I2C bus experienced extreme susceptibility to electromagnetic noise. This triggered frequent  bus timeouts and corrupted data registers, which is catastrophic for a stable flight loop.
 
    2. **Loop Timing Degradation**: Processing multiple distinct PWM channel inputs required reading multiple pins sequentially. This approach proved incredibly messy, hogged system overhead, and heavily slowed down the execution frequency of the core tracking scheduler.
@@ -293,11 +293,11 @@ To adjust control loops on the fly without re-flashing the core silicon, use the
 Commands must be issued as a single, contiguous string with no spaces: 
                   [Axis][Term][Value]
 
-| Axis Identifier | Target Axis | COntrol Term | Term Meaning | Valid Range Bounds (MIN-Max) | Default Startup Value |
+| Axis Identifier | Target Axis | Control Term | Term Meaning | Valid Range Bounds (MIN-Max) | Default Startup Value |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `r` | Roll | `p` | Kp(Proportional) | 0.5->4.0 | `1.2` |
 | `p` | Pitch | `i` | Ki(Integral) | 0.0->0.1 | `0.0` |
-| `y` | Yae | `d` | Kd(Derivative) | 0.0->1.0 | `0.0` |
+| `y` | Yaw | `d` | Kd(Derivative) | 0.0->1.0 | `0.0` |
 
 Examples:
 - `rp1.5` -> Sets Roll Kp=1.5
@@ -403,7 +403,7 @@ https://github.com/user-attachments/assets/b165dcd2-82bb-4b75-9722-de7085d2752c
 
 ## 10. Post-Tuning Manual Flight Test Profile
 
-Following the successful calibration of the feedback loops and sensor offset matrices, the final phase involved executing a manual Line-of-Sigth (LOS) maiden flight test to validate real-time stabilization performance under active pilot stick inputs.
+Following the successful calibration of the feedback loops and sensor offset matrices, the final phase involved executing a manual Line-of-Sight (LOS) maiden flight test to validate real-time stabilization performance under active pilot stick inputs.
 
 ### Pre-Flight & Control Configuration
 - **System Constraints:** Because the current version of the firmware runs on a 6-DOF configuration (omitting the BMP280 barometer and magnetometer), vertical altitude and yaw headings were maintained entirely through manual transmitter stick adjustments.
