@@ -4,6 +4,8 @@
 
 *Figure: AZRAEL.V1.0*
 
+https://github.com/user-attachments/assets/50c04f5f-580a-496b-ac7c-7c8fab7154ee
+
 **AZRAEL.V1.0** is an embedded flight control system engineered from scratch for the **STM32F103C8T6 (Blue Pill)** microcontroller. The project focuses on efficient hardware utilization through modular firmware design, dedicated peripheral isolation, high-speed SPI sensor acquisition, direct timer register control for ESC actuation, and a custom calibration engine that ensures consistent and reliable pre-flight operation.
 
 ## Design Philosophy
