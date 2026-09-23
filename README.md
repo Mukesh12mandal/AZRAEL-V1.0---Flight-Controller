@@ -107,7 +107,7 @@ The development of AZRAEL.V1.O progressed through two distinct phases, shifting 
 
 ### 3.1 Phase 1:The Breadboard Prototype (The I2C&PWM Baseline)
 
-![Breadboard Prototype for the testing of the logic](images/Prototype_1.jfif)
+<img src="images/Prototype_1.jfif" width="60%" alt="Breadboard prototype"/>
 *Figure: Breadboard Prototype*
 
 The initial proof-of-concept was constructed on a standard solderless breadboard to establish readings from the GY-91 IMU and process incoming transmitter control signals. 
